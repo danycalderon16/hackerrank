@@ -8,7 +8,16 @@
  *  2. INTEGER_ARRAY b
  */
 
-function compareTriplets(a, b) {}
+function compareTriplets(a, b) {
+  let first = 0;
+  let second = 0;
+
+  a.map((el, index) =>
+    el > b[index] ? first++ : el < b[index] ? second++ : second
+  );
+
+  return [first, second];
+}
 
 function main() {
   const a = [1, 2, 3];
@@ -19,3 +28,5 @@ function main() {
 
   console.log(result);
 }
+
+main();
