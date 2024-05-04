@@ -1,15 +1,14 @@
 function icecreamParlor(m, arr) {
   const map = new Map();
-
-  map.set(m - arr[0], arr[0]);
+  map.set(m - arr[0], 1);
   for (let i = 1; i < arr.length; i++) {
     if (map.has(arr[i])) {
-      return [map.get(arr[i]), arr[i]];
-    } else map.set(m - arr[i], arr[i]);
+      return [map.get(arr[i]), i + 1];
+    } else map.set(m - arr[i], i + 1);
   }
 
-  return -1;
+  return [];
 }
 
-const r = icecreamParlor(4, [10, 11, 4, 5, 3, 1]);
+const r = icecreamParlor(6, [1, 3, 4, 5, 6]);
 console.log(r);
